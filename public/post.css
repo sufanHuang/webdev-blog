@@ -1,0 +1,91 @@
+html {
+    font-size: 18px;
+    max-width: 100%;
+}
+
+body {
+    background:#fff;
+    color:#666;
+    font-family:Segoe UI,Consolas,monospace,Microsoft YaHei;
+    font-weight:lighter;
+    text-align:left;
+    max-width: 45rem;
+    padding:.5rem;
+    margin: 0 auto;
+    line-height:1.45
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arimo, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    border-bottom: 2px solid #fafafa;
+    margin-bottom: 1.15rem;
+    padding-bottom: .5rem;
+    text-align: center;
+}
+
+blockquote {
+    border-left: 8px solid #fafafa;
+    padding: 1rem;
+}
+
+pre,
+code {
+    background-color: #fafafa;
+}
+
+img {
+    border-radius: 8px;
+    display:block;
+    margin:auto;
+    width:50%
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
+    transition:color .3s
+}
+a:hover {
+    color:#cd3f45
+}
+.Blog {
+    margin:0 auto;
+    padding:0 20px;
+    max-width:600px
+}
+.Blog_header {
+    margin-top:50px;
+    text-align:center
+}
+.Blog_title {
+    font-size:20px
+}
+.Blog_links {
+    padding:0;
+    text-align:center;
+    overflow:hidden;
+}
+.Blog_link {
+    list-style:none;
+    display:inline-block
+}
+.Blog_link:not(:first-child) {
+    margin-left:8px;
+    padding-left:8px;
+    border-left:1px solid #eee
+}
+
+.Blog_body {
+    margin-top:50px
+}
+

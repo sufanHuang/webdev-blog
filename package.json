@@ -1,0 +1,22 @@
+{
+  "name": "webdev-blog",
+  "engines":{
+    "node":"10.x"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "showdown makehtml -i pages\\awsSAA.md -o dist\\awsSAA.html",
+    "create": "sh createPages.sh",
+    "showdown": "showdown",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "showdown": "^1.9.1"
+  }
+}
