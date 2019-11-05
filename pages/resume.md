@@ -1,10 +1,10 @@
 #Sufan Huang (US Citizen)
 
 ##Professional Summary
-####Self-motivated full-stack developer with experience working on multiple projects. Passionate and hardworking with penchant for meeting deadlines. Interested in role utilizing technology relating to AWS/node/reactjs.
+###Self-motivated full-stack developer with experience working on multiple projects. Passionate and hardworking with penchant for meeting deadlines. Interested in role utilizing technology relating to AWS/node/reactjs.
 ##Skills
-###Technologies: HTML, CSS, Bootstrap, Javascript, React and Gatsby for frontend development; Node, Express, AWS, SQL, MongoDB for backend technologies.
-###Tools: Git, Github, APIs, Postman, Serverless, IntelliJ, CircleCi, Netlify, Heroku to develop and deploy apps.
+####Technologies: HTML, CSS, Bootstrap, Javascript, React and Gatsby for frontend development; Node, Express, AWS, SQL, MongoDB for backend technologies.
+####Tools: Git, Github, APIs, Postman, Serverless, IntelliJ, CircleCi, Netlify, Heroku to develop and deploy apps.
 ##Work History
 ###Aspiring Full-Stack Dveloper in Trainning, Des Moines,IA| 2018-present
 * Study programming for more than 2000 hours through books, documentation,  Udemy, 

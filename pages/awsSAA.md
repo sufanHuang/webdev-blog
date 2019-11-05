@@ -4,9 +4,9 @@
 October 26th marked the official date of me receiving the badge for "AWS Certified Solution Architect-Associate".
 I think it deserves a journal log.
 
-![saa](../public/images/solution-architect-associate.png)
+![saa](images/solution-architect-associate.png)
 
-As I mentioned in [AWS Certified Cloud Practitioner](../public/awsCCP.html) article, getting the first amazon badge was 
+As I mentioned in [AWS Certified Cloud Practitioner](awsCCP.html) article, getting the first amazon badge was 
 quite an encouragement, but it is far from enough. At the end of September,, I felt myself entering the matrix of AWS. 
 I am able to recognize, name, and talk about the basic concept of most AWS services. In my understanding they were still 
 tangled together with each other, like those unsorted clothes just out from dryer. I feel an urge to know what each of them

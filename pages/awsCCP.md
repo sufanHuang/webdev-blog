@@ -39,3 +39,6 @@ short term memory to long term memory. It took me about 3 weeks to finish these 
 the day I passed the first AWS test, Certified Cloud Practitioner exam. 
 
 The CCP badge is an encouragement to move forward.
+
+
+![awsCCP](images/awsCCP.png)

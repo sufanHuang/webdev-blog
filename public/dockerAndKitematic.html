@@ -7,22 +7,19 @@
 </head>
 <body>
     <div class = 'Blog'>
-        <div class ="Blog_header">
-            <div class ="Blog_title">
+        <div class = 'Blog-header'>
+             <div class ="Blog_title">
                 <a href="/">SUFAN HUANG</a>
             </div>
             <ul class ="Blog_links">
                 <li class ="Blog_link">
-                    <a href="about.html">About</a>
-                </li>
-                <li class ="Blog_link">
                     <a href="https://github.com/sufanHuang">GitHub</a>
                 </li>
                 <li class ="Blog_link">
-                    <a href="resume.html">Resume</a>
+                    <a href="">CV</a>
                 </li>
                 <li class ="Blog_link">
-                    <a href="portfolio.html">Portfolio</a>
+                    <a href="">Portfolio</a>
                 </li>
             </ul>
         </div>
@@ -33,17 +30,17 @@
 of installing all the different versions and GUI of database. I wanted to compared how different database handle data
 flow different, so I created a real need to get to know Docker.</p>
 <p>I would say that it is like a friend that you wish you know earlier, who would have saved so much of your pain!</p>
-<p>Okay, what is docker? It is an isolated container where all the software you need, including libraries, system tools,
+<p>Okay, what is docker? It is an isolated container where all the software you need, including libraries, system tools, 
 code, and runtime for your development are bundled together. I tried to understand it as a small house with all the utilities
 a person need to survive without going out to search for fulfilment. </p>
-<p>There are two ways to interact with Docker, through docker cli and kitematic. I tried Kitematic first until it ran into
+<p>There are two ways to interact with Docker, through docker cli and kitematic. I tried Kitematic first until it ran into 
 some problems.</p>
 <p>My goal is to use three kinds of database: SQL(postgres), noSQL(mongoDB) and elasticsearch to interact with a same back-end
 blog app. Here are the steps I took:</p>
 <ul>
 <li><p>Download Docker from <a href="https://hub.docker.com/?overlay=onboarding">Docker Hub</a>. The download wizard is quite straight forward,
 one interesting point is that after installed successfully, the Docker icon(whale carrying boxes) is hidden in the Notifications area!</p></li>
-<li><p>Create an Docker ID on <a href="https://hub.docker.com/">hub.docker.com</a>. Now I feel like I have extended my power of having some virtual
+<li><p>Create an Docker ID on <a href="https://hub.docker.com/">hub.docker.com</a>. Now I feel like I have extended my power of having some virtual 
 boxes ready and it is time to ask the whale to carry in the database images I need.</p></li>
 <li><p>Download <a href="https://kitematic.com/">Kitematic</a>, then LOG IN with Docker ID and user name created in previous step. After this,
 you will see all these colorful images floating on kitematic that you can put into your container!</p></li>
