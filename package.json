@@ -16,7 +16,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "express": "^4.17.1",
     "showdown": "^1.9.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
