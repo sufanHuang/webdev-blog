@@ -1,7 +1,7 @@
 {
   "name": "webdev-blog",
-  "engines":{
-    "node":"10.x"
+  "engines": {
+    "node": "10.x"
   },
   "version": "1.0.0",
   "description": "",
