@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="425245b5-541a-40d6-8b68-692e6dbc5ee2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/awsCCP.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/awsCCP.md" beforeDir="false" afterPath="$PROJECT_DIR$/pages/awsCCP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/awsSAA.md" beforeDir="false" afterPath="$PROJECT_DIR$/pages/awsSAA.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/resume.md" beforeDir="false" afterPath="$PROJECT_DIR$/pages/resume.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/awsCCP.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/awsCCP.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/awsSAA.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/awsSAA.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dockerAndKitematic.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/dockerAndKitematic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +245,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572972725656" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572976128118" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../showdown-blog" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -288,7 +279,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572916571715</updated>
-      <workItem from="1572916572937" duration="16100000" />
+      <workItem from="1572916572937" duration="16719000" />
     </task>
     <task id="LOCAL-00001" summary="Adding pages">
       <created>1572931569053</created>
@@ -339,11 +330,18 @@
       <option name="project" value="LOCAL" />
       <updated>1572972685904</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Adding pages">
+      <created>1572973426271</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572973426271</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16100000" />
+    <option name="totallyTimeSpent" value="16719000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
