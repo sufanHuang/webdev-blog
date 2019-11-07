@@ -61,7 +61,8 @@ blockquote {
 
 pre,
 code {
-    background-color: #fafafa;
+    background-color: #e6dfbd;
+    font-size: 12px;
 }
 
 img {
@@ -110,7 +111,4 @@ a:hover {
     margin-top:50px
 }
 
-.javascript language-javascript{
-    background-color: #0b0405;
-    font-size: 18px;
-}
+
