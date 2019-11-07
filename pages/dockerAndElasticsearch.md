@@ -6,7 +6,9 @@ but have never made a project with it. So this would be my first project with El
 When I tried to launch Elasticsearch(the official one) image as well as Kibana image in Kitematic UI, both would show 404 error. 
 There is DOCKER CLI icon at the left low corner at Kitematic UI. It is time to get used to DOCKER CLI. 
 
-[Install Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html) helps me from here. 
+##### Launching Elasticsearch
+
+**[Install Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)** helps me from here. 
 These are steps I took:
 * Pulling elasticsearch image:
 ````javascript
@@ -20,13 +22,15 @@ docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elas
 After done, DOCKER CLI would give status of the image, take note for the name or ID of this image, we will need it for connecting
 to Kibana.
 
-[Running Kibana on Docker](https://www.elastic.co/guide/en/kibana/current/docker.html) is the documentation I referred to 
+##### Launching Kibana
+
+**[Running Kibana on Docker](https://www.elastic.co/guide/en/kibana/current/docker.html)** is the documentation I referred to 
 to launch Kibana. These are steps I took:
 * Pulling the image:
 ````javascript
 docker pull docker.elastic.co/kibana/kibana:7.4.2
 ````
-*Running Kibana on Docker and Connected to Elasticsearch container:
+Running Kibana on Docker and Connected to Elasticsearch container:
 ````javascript
 docker run --link YOUR_ELASTICSEARCH_CONTAINER_NAME_OR_ID:elasticsearch -p 5601:5601
 ````
@@ -36,6 +40,7 @@ Replace YOUR_ELASTICSEARCH_CONTAINER_NAME_OR_ID with previous step, in my case I
 docker run --link vigilant_brattain:elasticsearch -p 5601:5601
 ````
 
+##### Check Images Statues and Port
 Now type `docker ps` on `DOCKER CLI`, you will see both images running, together all other running images you have.
 I went back to Kitematic UI, both images are also showing up on the left.
 
@@ -43,6 +48,8 @@ The default port for Elasticsearch is 9200, you can also find it at Settings/Hos
 `localhost:5601` is the url to open Kibana.
 
 Now it is done with DOCKER CLI Kitematic interface. Time to turn to my Intellij IDE.
+
+##### Connecting at server.js
 
 There are two steps to connect Elasticsearch with server. First is  `npm install @elastic/elasticsearch`. Second, there
 lines of code as these:
@@ -54,6 +61,7 @@ const index = 'posts'
 ````
 Elasticsearch doesn't like uppercase in index(table in SQL language) name, I only found out after the server gave me error message.
 
+##### CRUD Operation
 The CRUD operations look like this in my _server.js_ file:
 ````javascript
 app.get('/api/posts/:id', async(req,res)=>{
@@ -135,7 +143,7 @@ app.put('/api/posts/:id', async(req, res)=>{
     res.send(result)
 })
 ````
-
+##### Using Lodash
 Elasticsearch data output has nested object, It took me a while to figure out how to put it in
 a flat object. _lodash library_ has a lot of array functions to help manipulate data. Here is how I use `_assign` to take
 care of the nested object:
@@ -152,10 +160,12 @@ care of the nested object:
     let outputItem = _.assign( { id: item._id}, item._source)
 ````
 
+##### Documentation
 These are documentation that helped me in this project:
-* [Install Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
-* [Running Kibana on Docker](https://www.elastic.co/guide/en/kibana/current/docker.html)
-* [ELK-Docker](https://elk-docker.readthedocs.io/)
-* [Elasticsearch API Refernce](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/7.x/api-reference.html)
+* __[Install Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)__
+* __[Running Kibana on Docker](https://www.elastic.co/guide/en/kibana/current/docker.html)__
+* __[ELK-Docker](https://elk-docker.readthedocs.io/)__
+* __[Elasticsearch API Refernce](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/7.x/api-reference.html)__
 
-Here is the finished project with frontend on [Github](https://github.com/sufanHuang/elasticsearch-blog)
+##### Full-stack project on github
+Here is the finished project with frontend on __[Github](https://github.com/sufanHuang/elasticsearch-blog)__

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./post.css">
+    <title>Sufan's Blog</title>
+</head>
+<body>
+    <div class = 'Blog'>
+        <div class ="Blog_header">
+            <div class ="Blog_title">
+                <a href="/">SUFAN HUANG</a>
+            </div>
+            <ul class ="Blog_links">
+                <li class ="Blog_link">
+                    <a href="about.html">About</a>
+                </li>
+                <li class ="Blog_link">
+                    <a href="https://github.com/sufanHuang">GitHub</a>
+                </li>
+                <li class ="Blog_link">
+                    <a href="resume.html">Resume</a>
+                </li>
+                <li class ="Blog_link">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="Blog_body">
+       <h4 id="launchingelasticsearchandkibanathroughdockercli">Launching Elasticsearch and Kibana Through Docker CLI</h4>
+<p>AS I get comfortable using Docker using Katematic, I want to try out elasticsearch image. I have read about Elasticsearch
+but have never made a project with it. So this would be my first project with Elasticsearch, using Docker container.</p>
+<p>When I tried to launch Elasticsearch(the official one) image as well as Kibana image in Kitematic UI, both would show 404 error. 
+There is DOCKER CLI icon at the left low corner at Kitematic UI. It is time to get used to DOCKER CLI. </p>
+<h5 id="launchingelasticsearch">Launching Elasticsearch</h5>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html">Install Elasticsearch with Docker</a></strong> helps me from here. 
+These are steps I took:</p>
+<ul>
+<li>Pulling elasticsearch image:</li>
+</ul>
+<pre><code class="javascript language-javascript">docker pull docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+</code></pre>
+<ul>
+<li>Starting a cluster with docker:</li>
+</ul>
+<pre><code class="javascript language-javascript">docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+</code></pre>
+<p>After done, DOCKER CLI would give status of the image, take note for the name or ID of this image, we will need it for connecting
+to Kibana.</p>
+<h5 id="launchingkibana">Launching Kibana</h5>
+<p><strong><a href="https://www.elastic.co/guide/en/kibana/current/docker.html">Running Kibana on Docker</a></strong> is the documentation I referred to 
+to launch Kibana. These are steps I took:</p>
+<ul>
+<li>Pulling the image:</li>
+</ul>
+<pre><code class="javascript language-javascript">docker pull docker.elastic.co/kibana/kibana:7.4.2
+</code></pre>
+<p>Running Kibana on Docker and Connected to Elasticsearch container:</p>
+<pre><code class="javascript language-javascript">docker run --link YOUR_ELASTICSEARCH_CONTAINER_NAME_OR_ID:elasticsearch -p 5601:5601
+</code></pre>
+<p>Replace YOUR<em>ELASTICSEARCH</em>CONTAINER<em>NAME</em>OR_ID with previous step, in my case I put down</p>
+<pre><code class="javascript language-javascript">docker run --link vigilant_brattain:elasticsearch -p 5601:5601
+</code></pre>
+<h5 id="checkimagesstatuesandport">Check Images Statues and Port</h5>
+<p>Now type <code>docker ps</code> on <code>DOCKER CLI</code>, you will see both images running, together all other running images you have.
+I went back to Kitematic UI, both images are also showing up on the left.</p>
+<p>The default port for Elasticsearch is 9200, you can also find it at Settings/Hostname at Kitematic UI of the image.
+<code>localhost:5601</code> is the url to open Kibana.</p>
+<p>Now it is done with DOCKER CLI Kitematic interface. Time to turn to my Intellij IDE.</p>
+<h5 id="connectingatserverjs">Connecting at server.js</h5>
+<p>There are two steps to connect Elasticsearch with server. First is  <code>npm install @elastic/elasticsearch</code>. Second, there
+lines of code as these:</p>
+<pre><code class="javascript language-javascript">const { Client } = require("@elastic/elasticsearch")
+const client = new Client({node: 'http://localhost:9200'})
+const index = 'posts'
+</code></pre>
+<p>Elasticsearch doesn't like uppercase in index(table in SQL language) name, I only found out after the server gave me error message.</p>
+<h5 id="crudoperation">CRUD Operation</h5>
+<p>The CRUD operations look like this in my <em>server.js</em> file:</p>
+<pre><code class="javascript language-javascript">app.get('/api/posts/:id', async(req,res)=&gt;{
+    const { id } = req.params
+    let parameters ={
+        index,
+        body:{
+            query:{
+                match: {_id:id}
+            }
+        }
+    }
+    let [ error, result] = await to (client.search(parameters))
+    if(error){
+        res.send(error)
+    }
+    let item =_.get(result,"body.hits.hits[0]")
+    let outputItem = _.assign( { id: item._id}, item._source)
+    if(outputItem){
+       res.json(outputItem)
+    } else {
+        console.log("item not found")
+    }
+
+
+})
+
+app.post('/api/posts', async (req, res)=&gt;{
+    const { title, author, imageURL, content} = req.body
+    let parameters = {
+        index,
+        body:{
+            title,
+            author,
+            imageURL,
+            content,
+            createdAt:Date()
+        }
+    }
+    let [ error ] =await to (client.index(parameters))
+    if(error){
+        res.send(error)
+    }
+    res.send('adding a post')
+})
+
+app.delete('/api/posts/:id', async(req,res)=&gt;{
+    const { id } = req.params
+    let parameters = {
+        id,
+        index
+    }
+    let [error] =await to(client.delete(parameters))
+    if(error){
+        res.send(error)
+    }
+    res.send("deleting a post")
+})
+
+app.put('/api/posts/:id', async(req, res)=&gt;{
+    const { id } = req.params
+    const { title,imageURL, content}=req.body
+    let parameters = {
+        id,
+        index,
+        body:{
+            doc: {
+                title,
+                imageURL,
+                content
+            }
+        }
+    }
+
+    let [ error, result] = await to (client.update(parameters))
+    if(error){
+        res.send(error)
+    }
+    res.send(result)
+})
+</code></pre>
+<h5 id="usinglodash">Using Lodash</h5>
+<p>Elasticsearch data output has nested object, It took me a while to figure out how to put it in
+a flat object. <em>lodash library</em> has a lot of array functions to help manipulate data. Here is how I use <code>_assign</code> to take
+care of the nested object:</p>
+<ul>
+<li>In get-all-posts function:</li>
+</ul>
+<pre><code class="javascript language-javascript">    let items = _.get(result, 'body.hits.hits')
+    let outputData = _.map(items, (currentItem) =&gt; {
+        return _.assign({ id: currentItem._id}, currentItem._source)
+    })
+</code></pre>
+<ul>
+<li>In get-one-post function:</li>
+</ul>
+<pre><code class="javascript language-javascript">    let item =_.get(result,"body.hits.hits[0]")
+    let outputItem = _.assign( { id: item._id}, item._source)
+</code></pre>
+<h5 id="documentation">Documentation</h5>
+<p>These are documentation that helped me in this project:</p>
+<ul>
+<li><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html">Install Elasticsearch with Docker</a></strong></li>
+<li><strong><a href="https://www.elastic.co/guide/en/kibana/current/docker.html">Running Kibana on Docker</a></strong></li>
+<li><strong><a href="https://elk-docker.readthedocs.io/">ELK-Docker</a></strong></li>
+<li><strong><a href="https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/7.x/api-reference.html">Elasticsearch API Refernce</a></strong></li>
+</ul>
+<h5 id="fullstackprojectongithub">Full-stack project on github</h5>
+<p>Here is the finished project with frontend on <strong><a href="https://github.com/sufanHuang/elasticsearch-blog">Github</a></strong></p>
+        </div>
+
+    </div>
+</body>
+</html>
