@@ -6,7 +6,7 @@ I think it deserves a journal log.
 
 ![saa](images/solution-architect-associate.png)
 
-As I mentioned in [AWS Certified Cloud Practitioner](awsCCP.html) article, getting the first amazon badge was 
+As I mentioned in _[AWS Certified Cloud Practitioner](awsCCP.html)_ article, getting the first amazon badge was 
 quite an encouragement, but it is far from enough. At the end of September,, I felt myself entering the matrix of AWS. 
 I am able to recognize, name, and talk about the basic concept of most AWS services. In my understanding they were still 
 tangled together with each other, like those unsorted clothes just out from dryer. I feel an urge to know what each of them
