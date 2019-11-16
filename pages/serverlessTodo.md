@@ -298,6 +298,8 @@ Execute `sls deploy, ` in command line and Serverless Framework should start dep
 After deployment, go to AWS console and you can resources specified in `serverless.yml` created in S3 buckers, Cloudformation,
 Lambda functions, DynamoDB and API Gateway.
 
+To avoid any charge on AWS account, execute `serverless remove` to delete the whole stack. 
+
 ##### Documentation
 
 * [Serverless.yml Reference](https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/)

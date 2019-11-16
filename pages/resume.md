@@ -1,31 +1,36 @@
 #Sufan Huang (US Citizen)
-
-##Professional Summary
-###Self-motivated full-stack developer with experience working on multiple projects. Passionate and hardworking with penchant for meeting deadlines. Interested in role utilizing technology relating to AWS/node/reactjs.
+5331 SE 25TH DES MOINES IA 50320 | (785) 3121035 | sufanhk@gmail.com
+Blog/Portfolio:  https://sufanhuang.herokuapp.com
+ 
+##Summary
+Self-motivated full-stack developer with experience working on multiple projects utilizing Nodejs.  Interested in role allowing me to learn and expand my knowledge of front-end and back-end technologies.
 ##Skills
-####Technologies: HTML, CSS, Bootstrap, Javascript, React and Gatsby for frontend development; Node, Express, AWS, SQL, MongoDB for backend technologies.
-####Tools: Git, Github, APIs, Postman, Serverless, IntelliJ, CircleCi, Netlify, Heroku to develop and deploy apps.
+Technologies: HTML, CSS, Bootstrap, JavaScript, React and Gatsby; Node, Express, AWS, SQL, MongoDB, Elasticsearch.
+Tools: Git, GitHub, APIs, Postman, Serverless, IntelliJ, Circles, Docker, Netlify, Heroku.
+Communication: Proven presentational/interpersonal/written skills as a teacher.
+
 ##Work History
-###Aspiring Full-Stack Dveloper in Trainning, Des Moines,IA| 2018-present
-* Study programming for more than 2000 hours through books, documentation,  Udemy, 
-  Freecodecamp, various Youtube channels
-* Develop apps from scratch to deployment utilizing frontend/backend technologies
-* Keep an active blog documenting project logs and problem solving process
-* Participate in local meetup for varies technology workshop
-* Keep abreast of emerging technologies, software and trends and project applications
+###Aspiring Software Developer in Training, Des Moines, IA| 2018-present
+* Obtaining AWS associate level certifications
+* Building APIs using express and deploying them via Heroku
+* Creation of full-stack projects using node, express and react, utilizing various databases such as PostgreSQL, MongoDB and Elasticsearch
+* Creation and deployment of apps using AWS DynamoDB, Lambda, API Gateway using serverless framework
+* Designing and implementing data models and APIs in full-stack apps to allow user authentication and interaction with data in databases
+* Learning and using development platforms such as GitHub, Heroku and CircleCi
+* Learning common problem-solving processes and debugging using IntelliJ and React Debugger
+* Hands-on experience with AWS services using Serverless framework
+
 ###Teacher, Des Moines Public School District | 2012-2018
-* Develop and maintain program websites using weebly,wordpress
-* Develop Prek-5 Chinese language and culture curriculum for IB school
-* Develop static web page contents using, MS and Storyline software
-* Provide 6-10 classes daily and formative and summative assessments
-* Communicate with parents for both academy learning and behavior
-###Curriculum Developer, University of Kansas |2010-2012
- * Use virtual technology to deliver curriculum and instruction
+* Developing and curating learning materials using Weebly and WordPress platforms
+* Teaching Mandarin Chinese to elementary school students
+
 ##Education & Certification
 * AWS Certified Solution Architect Associate-10/2019
 * AWS Certified Cloud Practitioner - 09/2019
-* MA in Language Education - University of Kansas 2010
-* BA in English - Shenzhen University, China 2008 
+* MA (Language Education) - University of Kansas 2010
+* BA (English) - University of Shenzhen 2007
+
 ##Honors
 * Case Speaker - International Law Moot Court Competition, Washington, D.C. 2007
 * 1st Prize Award Winner - International Law Competition, China 2007 
+
