@@ -5,9 +5,12 @@ Blog/Portfolio:  https://sufanhuang.herokuapp.com
 ##Summary
 Self-motivated full-stack developer with experience working on multiple projects utilizing Nodejs.  Interested in role allowing me to learn and expand my knowledge of front-end and back-end technologies.
 ##Skills
-Technologies: HTML, CSS, Bootstrap, JavaScript, React and Gatsby; Node, Express, AWS, SQL, MongoDB, Elasticsearch.
-Tools: Git, GitHub, APIs, Postman, Serverless, IntelliJ, Circles, Docker, Netlify, Heroku.
-Communication: Proven presentational/interpersonal/written skills as a teacher.
+####Technologies: 
+HTML, CSS, Bootstrap, JavaScript, React and Gatsby; Node, Express, AWS, SQL, MongoDB, Elasticsearch.
+####Tools: 
+Git, GitHub, APIs, Postman, Serverless, IntelliJ, Circles, Docker, Netlify, Heroku.
+####Communication: 
+Proven presentational/interpersonal/written skills as a teacher.
 
 ##Work History
 ###Aspiring Software Developer in Training, Des Moines, IA| 2018-present
