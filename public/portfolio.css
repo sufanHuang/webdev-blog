@@ -4,12 +4,12 @@
 }
 
 .projects_box {
-    margin:0.8rem;
+    margin: 0 0.5rem;
+    padding-bottom: 2rem;
     background: #fff;
     border-radius: 5px;
     box-shadow: -1px 2px 34px -13px rgba(0,0,0,0.75);
     text-align: center;
-    overflow: hidden;
 
 }
 
@@ -24,10 +24,11 @@
 .parent {
     display:flex;
     flex-flow: wrap;
-    margin:0.5rem;
     justify-content:center;
-    flex-basis: auto;
-
+}
+img{
+    height: 150px;
+    width: auto;
 }
 
 
