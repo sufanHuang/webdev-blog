@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./post.css">
+    <title>Sufan's Blog</title>
+</head>
+<body>
+    <div class = 'Blog'>
+        <div class ="Blog_header">
+            <div class ="Blog_title">
+                <a href="/">SUFAN HUANG</a>
+            </div>
+            <ul class ="Blog_links">
+                <li class ="Blog_link">
+                    <a href="about.html">About</a>
+                </li>
+                <li class ="Blog_link">
+                    <a href="https://github.com/sufanHuang">GitHub</a>
+                </li>
+                <li class ="Blog_link">
+                    <a href="resume.html">Resume</a>
+                </li>
+                <li class ="Blog_link">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="Blog_body">
+       <h4 id="whatismythinkingprocesswhencreateareactapp">What Is My Thinking Process When Create a React App</h4>
+<p>I have created a lot of vocabulary and mini books learning materials as a teacher. As my son is getting more and
+more interested in printed words, I decided to take them out to see if he wants to use them.</p>
+<p>He was thrilled to see his own pictures in one of the mini books. He decided to continue to read five of them, finished 
+by making one of his own book(with my help)! I decided to make a website to display those works of mine.</p>
+<p>I have made dozens of apps using create-react-app, but I realized that I haven't written any articles about it. So I like to
+lay out my thinking process while creating this personal project, which is similar for my other react app.</p>
+<h5 id="creatingroutes">Creating Routes</h5>
+<p>This is going to be a static website, so my first thoughts are how many pages do I need, and what is the functionality of
+each page. React is a components-based framework, so each functionality is like a piece of lego in my head. </p>
+<p>With that in mind, I started the project by creating routes in <code>app.js</code>. It looks like this:</p>
+<pre><code class="javascript language-javascript">import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './App.css';
+
+import BaseLayout from './components/BaseLayout'
+import Home from './components/Home'
+import Vocabulary from './components/Vocabulary'
+import Books from './components/Books'
+import About from './components/About'
+
+function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;BrowserRouter&gt;
+        &lt;BaseLayout&gt;
+          &lt;Switch&gt;
+            &lt;Route exact path='/' component ={Home}/&gt;
+            &lt;Route path='/vocabulary' component ={Vocabulary}/&gt;
+            &lt;Route path='/books' component ={Books}/&gt;
+            &lt;Route path='/about' component ={About}/&gt;
+          &lt;/Switch&gt;
+        &lt;/BaseLayout&gt;
+      &lt;/BrowserRouter&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<h5 id="commoncomponentsforallpages">Common Components for All Pages</h5>
+<p><code>BaseLayout</code> contains navbar and footer, which is the common components that are shared by all pages. In <code>BaseLayout</code>,
+all the other components are treated like children:</p>
+<pre><code class="javascript language-javascript">export default class BaseLayout extends Component {
+    render(){
+        return(
+            &lt;div&gt;
+                &lt;div className='navbar'&gt;
+                    &lt;div className='nav-links'&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;NavLink activeClassName='selected' className='nav-link' exact to ='/'&gt;Home&lt;/NavLink&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;NavLink activeClassName='selected' className='nav-link' exact to ='/about'&gt;About&lt;/NavLink&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;NavLink activeClassName='selected' className='nav-link' exact to ='/vocabulary'&gt;Vocabulary&lt;/NavLink&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;NavLink activeClassName='selected' className='nav-link' exact to ='/books'&gt;Books&lt;/NavLink&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    {this.props.children}
+                &lt;/div&gt;
+                &lt;div className='footer'&gt;
+                    &lt;p&gt; @ 2019 Copyright Sufan Huang&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre>
+<h5 id="creatinghomepages">Creating Home Pages</h5>
+<p>This is the landing page for the website. I wanted it to be as concise as possible. So there are three major <code>div</code>s in this 
+component: a <code>jumbotron</code>, a <code>flex-container</code> for vocabulary silde-images and a <code>flex-container</code> for books slide-image. Each of 
+the container has <code>Link</code> element to the vocabulary list page and the book list page.</p>
+<h5 id="creatingchildrenpages">Creating Children Pages</h5>
+<p><code>Data</code> in this website are served inside the app, without using any backend. The images of this website are stored in <a href="https://imgbb.com/">imgbb</a>
+, so the Data component only needs to store the <code>imgUrl</code>. The vocabulary and book pages are very similar, rendering
+their respective data using <code>map</code> function.</p>
+<h5 id="styling">Styling</h5>
+<p>Each component has their own <code>index.css</code>. Although several components share similar styling, I prefer to keep them seperated. </p>
+<h5 id="links">Links</h5>
+<p>You can see the finished website <a href="https://learn-chinese.netlify.com/">learn-chinese</a>.
+Source code are in <a href="https://github.com/sufanHuang/learn-chinese">GitHub</a></p>
+        </div>
+
+    </div>
+</body>
+</html>
