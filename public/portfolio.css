@@ -31,5 +31,10 @@ img{
     width: auto;
 }
 
+span {
+    border-style:solid;
+    border-color: bisque;
+    border-radius: 3px;
+}
 
 
