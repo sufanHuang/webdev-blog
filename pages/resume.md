@@ -6,13 +6,14 @@ Self-motivated full-stack developer with experience working on multiple projects
 ####Technologies: 
 HTML, CSS, Bootstrap, JavaScript, React and Gatsby; Node, Express, AWS, SQL, MongoDB, Elasticsearch.
 ####Tools: 
-Git, GitHub, APIs, Serverless, IntelliJ, CircleCi, Docker, Netlify, Heroku.
+Git, GitHub, APIs, Serverless, IntelliJ, CircleCi, Docker, Netlify, Heroku, Mocha, Chai.
 ####Communication: 
 Proven presentational/interpersonal/written skills as a teacher.
 
 ##Work History
 ###Aspiring Software Developer in Training, Des Moines, IA| 2018-present
 * Obtaining AWS associate level certifications
+* Practice Test Driven Development using Mocha and Chai
 * Building APIs using express and deploying them via Heroku
 * Creation of full-stack projects using node, express and react, utilizing various databases such as PostgreSQL, MongoDB and Elasticsearch
 * Creation and deployment of apps using AWS DynamoDB, Lambda, API Gateway using serverless framework
@@ -23,9 +24,11 @@ Proven presentational/interpersonal/written skills as a teacher.
 
 ###Teacher, Des Moines Public School District | 2012-2018
 * Developing and curating learning materials using Weebly and WordPress platforms
+* Experience and a good understanding of UX design principles
 * Teaching Mandarin Chinese to elementary school students
 
 ##Education & Certification
+* AWS Certified Developer Associate- 12/2019
 * AWS Certified Solution Architect Associate-10/2019
 * AWS Certified Cloud Practitioner - 09/2019
 * MA (Language Education) - University of Kansas 2010
