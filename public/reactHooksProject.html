@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./post.css">
+    <title>Sufan's Blog</title>
+</head>
+<body>
+    <div class = 'Blog'>
+        <div class ="Blog_header">
+            <div class ="Blog_title">
+                <a href="/">SUFAN HUANG</a>
+            </div>
+            <ul class ="Blog_links">
+                <li class ="Blog_link">
+                    <a href="about.html">About</a>
+                </li>
+                <li class ="Blog_link">
+                    <a href="https://github.com/sufanHuang">GitHub</a>
+                </li>
+                <li class ="Blog_link">
+                    <a href="resume.html">Resume</a>
+                </li>
+                <li class ="Blog_link">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="Blog_body">
+       <h2 id="buildingabudgetcalculatorwithreacthooks">Building a budget-calculator with react hooks.</h2>
+<p>I like to  get used with react hooks while using react. The structure of this project is very similar to the todo app
+I build a while ago, using CRUD operations in frontend.</p>
+<h3 id="createanewreactproject">Create a new react project</h3>
+<p>As always, I use Create React App, to skip all the manual build configurations with babel, webpack, etc.</p>
+<pre><code class="javascript language-javascript">npx create-react-app budget-calculator
+</code></pre>
+<h3 id="structureoftheapp">Structure of the app</h3>
+<p>It is going to be a one-page app, so I am going to use App.js as the parent component. There are four children components 
+in the components folder: <code>Alert.js</code> for page updates; <code>ExpenseForm.js</code>for adding/editing expense; <code>ExpenseItem.js</code>
+for displaying each expense; <code>ExpenseList.js</code>for displaying all the items. </p>
+<h3 id="addstatewithusestateanduseeffecthooks">Add state with useState and useEffect Hooks</h3>
+<p>State allows us to track change inside of react components. The budget-calculator list changes quite frequently. For example:</p>
+<ul>
+<li>Adding(id, charge, amount parameters) new expense</li>
+<li>Editing existed expense</li>
+<li>Deleting expense</li>
+<li>Giving alert</li>
+</ul>
+<p>Import useState Hook alongside where React is imported:</p>
+<pre><code class="javascript language-javascript">import React, { useState, useEffect } from 'react'
+</code></pre>
+<p>Grab items from localstorage:</p>
+<pre><code class="javascript language-javascript">const getSavedExpenses = () =&gt; {
+    let expenses = localStorage.getItem('expenses')
+
+    if(expenses) {
+        return JSON.parse(expenses)
+    }
+
+    return []
+}
+</code></pre>
+<p>Initialize the state properties needed for this app:</p>
+<pre><code class="javascript language-javascript">const [ expenses, setExpenses ] = useState(getSavedExpenses())
+const [ charge, setCharge ] = useState("")
+const [ amount, setAmount ] = useState("")
+const [ alert, setAlert ] = useState({ show: false })
+const [ edit, setEdit ] = useState(false)
+const [ id, setId ] = useState(0)
+</code></pre>
+<p>Hooking the initial state in the DOM using useEffect:</p>
+<pre><code class="javascript language-javascript"> useEffect( ()=&gt;{
+        localStorage.setItem("expenses", JSON.stringify(expenses))
+    }, [expenses])
+</code></pre>
+<h3 id="addexpense">Add expense:</h3>
+<p>We need to have functions to handle changes of state of charge and expense:</p>
+<pre><code class="javascript language-javascript">   const handleCharge = (event)=&gt;{
+        setCharge(event.target.value)
+    }
+
+    const handleAmount = (event) =&gt;{
+        let amount = event.target.value
+        if(amount === ""){
+            setAmount(amount)
+        }
+        setAmount(parseInt(amount))
+    }
+</code></pre>
+<p>We need a submit function to add the current state of charge and amount into the expenses list:</p>
+<pre><code class="javascript language-javascript">const handleSubmit = (event) =&gt; {
+        event.preventDefault()
+        if( charge !== "" &amp;&amp; amount &gt; 0){
+            if(edit){
+                let editExpenses = expenses.map(item =&gt;{
+                    return item.id === id ? { ...item, charge, amount } : item
+                })
+                setExpenses(editExpenses)
+                setEdit(false)
+            }else{
+                const currentExpense = { id: uuid(), charge, amount }
+                setExpenses([ ...expenses, currentExpense])
+                handleAlert({
+                    type: "success",
+                    text: "Item added"
+                })
+            }
+            setCharge("")
+            setAmount("")
+
+        }else{
+            handleAlert({
+                type: "danger",
+                text: "Please add an item with valid amount"
+            })
+        }
+    }
+</code></pre>
+<p>This three functions are passed on to the <code>ExpenseForm.js</code> as props:</p>
+<pre><code class="javascript language-javascript">const ExpenseForm = ({
+    charge,
+    amount,
+    edit,
+    handleCharge,
+    handleAmount,
+    handleSubmit
+}) =&gt; {
+    return(
+        &lt;form onSubmit={handleSubmit}&gt;
+            &lt;div className="form-center"&gt;
+                &lt;div className="form-group"&gt;
+                    &lt;label htmlFor="expense"&gt;Charge&lt;/label&gt;
+                    &lt;input
+                        type = "text"
+                        className="form-control"
+                        id="charge"
+                        name="charge"
+                        placeholder="e.g. Mortgage"
+                        value = { charge }
+                        onChange = { handleCharge }
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div className="form-group"&gt;
+                    &lt;label htmlFor="amount"&gt;Amount&lt;/label&gt;
+                    &lt;input
+                        type = "number"
+                        className="form-control"
+                        id="amount"
+                        name="amount"
+                        placeholder="e.g. 1000"
+                        value = { amount }
+                        onChange = { handleAmount }
+                    /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;button type = "submit" className="btn"&gt;
+                {edit ? "edit" : "submit"}
+                &lt;i className="fa fa-gavel btn-icon"&gt;&lt;/i&gt;
+            &lt;/button&gt;
+
+        &lt;/form&gt;
+    )
+}
+</code></pre>
+<h3 id="handleeditanddeletebudgetitem">Handle edit and delete budget item</h3>
+<p>We need functions to handle delete and edit an item:</p>
+<pre><code>    const handleDelete = (id) =&gt; {
+        let filteredExpenses = expenses.filter(item =&gt; item.id !== id)
+        setExpenses(filteredExpenses)
+        handleAlert({
+            type: "danger",
+            text: "Item deleted"
+        })
+    }
+
+    const handleEdit = (id) =&gt;{
+        let currentExpense = expenses.find(item=&gt; item.id === id)
+        let { charge, amount } = currentExpense
+        setCharge(charge)
+        setAmount(amount)
+        setEdit(true)
+        setId(id)
+    }    
+</code></pre>
+<p>These two functions are passed to <code>ExpenseList.js</code> as props. <code>ExpenseList.js</code> map through each item and passed 
+the above two functions as props to <code>ExpenseItem.js</code>:</p>
+<pre><code class="javascript language-javascript">const ExpenseList =({
+    expenses,
+    handleDelete,
+    handleEdit,
+    clearList
+}) =&gt; {
+    return(
+        &lt;div&gt;
+            &lt;ul className="list"&gt;
+                { expenses.map(expense =&gt;{
+                    return(
+                        &lt;ExpenseItem
+                          key = { expense.id }
+                          expense = { expense }
+                          handleDelete={ handleDelete }
+                          handleEdit={ handleEdit }
+                        /&gt;
+                    )
+                })}
+            &lt;/ul&gt;
+
+            {expenses.length &gt; 0 &amp;&amp; (
+                &lt;button className="btn" onClick = {clearList}&gt;
+                   Clear Expenses
+                    &lt; i className="fa fa-trash btn-icon"&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            )}
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+<p><code>ExpenseItem.js</code> display content of each expense and handle delete and edit:</p>
+<pre><code class="javascript language-javascript">const ExpenseItem = ({
+    expense: { id, charge, amount },
+    handleDelete,
+    handleEdit
+}) =&gt; {
+    return(
+        &lt;li className= "item"&gt;
+            &lt;div className="info"&gt;
+                &lt;span className="expense"&gt;{charge}&lt;/span&gt;
+                &lt;span className="amount"&gt;${amount}&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;button
+                    className='edit-btn'
+                    onClick={()=&gt;handleEdit(id)}
+                &gt;
+                    &lt; i className="fa fa-edit"&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;button
+                    className='clear-btn'
+                    onClick={()=&gt;handleDelete(id)}
+                &gt;
+                    &lt; i className="fa fa-trash"&gt;&lt;/i&gt;
+               &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    )
+}
+</code></pre>
+<h3 id="handlealert">Handle alert</h3>
+<p><code>handleAlert</code> Alert object has show, type and text attrbuts. It is called when an item is added, deleted or when no 
+item is not valid.</p>
+<pre><code class="javascript language-javascript">    const handleAlert = ({ type, text }) =&gt; {
+        setAlert({ show: true, type, text })
+        setTimeout( ()=&gt;{
+            setAlert({ show: false })
+        }, 7000)
+    }
+</code></pre>
+<p>It is passes to <code>Alert.js</code> as prop:</p>
+<pre><code class="javascript language-javascript">const Alert = ({ type,text }) =&gt; {
+    return &lt;div className = {`alert alert-${type}`}&gt;{text}&lt;/div&gt;
+}
+</code></pre>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/sufanHuang/budget-calculator">Github</a></li>
+<li><a href="https://budget-calculator-sufan.netlify.com/">View</a></li>
+<li><a href="https://www.youtube.com/watch?v=f6HYLHrYpGs&t=2s">Reference</a></li>
+</ul>
+        </div>
+
+    </div>
+</body>
+</html>
