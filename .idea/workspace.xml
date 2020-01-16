@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="425245b5-541a-40d6-8b68-692e6dbc5ee2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/algorithm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/data-visualization.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/portfolio.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +14,7 @@
     <session id="1223466892">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.2" value="1" />
@@ -54,7 +51,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="309" />
-          <entry key="html" value="1064" />
+          <entry key="html" value="1094" />
           <entry key="js" value="84" />
           <entry key="json" value="35" />
           <entry key="md" value="23539" />
@@ -66,7 +63,7 @@
         <counts>
           <entry key="Bash" value="6" />
           <entry key="CSS" value="309" />
-          <entry key="HTML" value="1064" />
+          <entry key="HTML" value="1094" />
           <entry key="JSON" value="35" />
           <entry key="JavaScript" value="87" />
           <entry key="Markdown" value="23536" />
@@ -89,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/portfolio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="59" selection-start-line="59" selection-end-line="70" selection-end-column="18" />
+            <state relative-caret-position="476">
+              <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -218,7 +215,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579120090982" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579136603188" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -265,7 +262,7 @@
       <workItem from="1574614726226" duration="599000" />
       <workItem from="1576799144946" duration="8885000" />
       <workItem from="1578767861361" duration="1559000" />
-      <workItem from="1579119703788" duration="329000" />
+      <workItem from="1579119703788" duration="1067000" />
     </task>
     <task id="LOCAL-00001" summary="Adding pages">
       <created>1572931569053</created>
@@ -498,11 +495,18 @@
       <option name="project" value="LOCAL" />
       <updated>1576813436592</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Add new page.">
+      <created>1579120168213</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1579120168213</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65641000" />
+    <option name="totallyTimeSpent" value="66379000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -786,8 +790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/portfolio.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="59" selection-start-line="59" selection-end-line="70" selection-end-column="18" />
+        <state relative-caret-position="476">
+          <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
         </state>
       </provider>
     </entry>
