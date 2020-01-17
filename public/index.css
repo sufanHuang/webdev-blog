@@ -9,7 +9,7 @@ body {
 }
 a {
     text-decoration:none;
-    color:inherit;
+    color: brown;
     transition:color .3s
 }
 a:hover {

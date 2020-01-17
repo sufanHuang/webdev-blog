@@ -40,7 +40,7 @@ serverless.yml that I use.
 
 ###### service
 ````javascript
-service: serverless-blog
+service: serverless-todo
 ````
 
 This is the name of the project.
