@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="425245b5-541a-40d6-8b68-692e6dbc5ee2" name="Default Changelist" comment="Add new pages.">
+    <list default="true" id="425245b5-541a-40d6-8b68-692e6dbc5ee2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/TDDCheckoutSystem.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +35,7 @@
           <entry key="jpg" value="1" />
           <entry key="js" value="2" />
           <entry key="json" value="3" />
-          <entry key="md" value="36" />
+          <entry key="md" value="37" />
           <entry key="sh" value="3" />
         </counts>
       </usages-collector>
@@ -46,7 +47,7 @@
           <entry key="Image" value="1" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="2" />
-          <entry key="Markdown" value="35" />
+          <entry key="Markdown" value="36" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
@@ -56,7 +57,7 @@
           <entry key="html" value="1213" />
           <entry key="js" value="84" />
           <entry key="json" value="35" />
-          <entry key="md" value="26604" />
+          <entry key="md" value="28001" />
           <entry key="sh" value="6" />
           <entry key="txt" value="152" />
         </counts>
@@ -68,7 +69,7 @@
           <entry key="HTML" value="1213" />
           <entry key="JSON" value="35" />
           <entry key="JavaScript" value="88" />
-          <entry key="Markdown" value="26600" />
+          <entry key="Markdown" value="27997" />
           <entry key="PLAIN_TEXT" value="152" />
         </counts>
       </usages-collector>
@@ -76,11 +77,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="578">
               <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/TDDCheckoutSystem.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="712">
+                <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -185,6 +198,7 @@
         <option value="$PROJECT_DIR$/public/portfolio.html" />
         <option value="$PROJECT_DIR$/pages/reactHooksProject.md" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/pages/TDDCheckoutSystem.md" />
       </list>
     </option>
   </component>
@@ -243,7 +257,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579223866564" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579284516048" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../budget-calculator" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -292,7 +306,7 @@
       <workItem from="1578767861361" duration="1559000" />
       <workItem from="1579119703788" duration="1067000" />
       <workItem from="1579136541472" duration="758000" />
-      <workItem from="1579191055114" duration="7983000" />
+      <workItem from="1579191055114" duration="11524000" />
     </task>
     <task id="LOCAL-00001" summary="Adding pages">
       <created>1572931569053</created>
@@ -560,11 +574,18 @@
       <option name="project" value="LOCAL" />
       <updated>1579214468847</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Add new pages.">
+      <created>1579225061457</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1579225061457</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75120000" />
+    <option name="totallyTimeSpent" value="78661000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -578,6 +599,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20303757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -866,6 +888,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/TDDCheckoutSystem.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="712">
+            <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
