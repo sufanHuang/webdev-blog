@@ -13,7 +13,7 @@ Proven presentational/interpersonal/written skills as a teacher.
 ##Work History
 ###Aspiring Software Developer in Training, Des Moines, IA| 2018-present
 * Obtained AWS developer and solution architect associate level certifications
-* Building interactive application using React, Vue and Angular
+* Building interactive applications using React, Vue and Angular
 * Practice Test Driven Development using Mocha and Chai
 * Building APIs using express and deploying them via Heroku
 * Creation of full-stack projects using node, express and react, utilizing various databases such as PostgreSQL, MongoDB and Elasticsearch
