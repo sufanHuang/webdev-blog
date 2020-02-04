@@ -4,7 +4,7 @@
 Self-motivated full-stack developer with experience working on multiple projects utilizing Nodejs.  Interested in role allowing me to learn and expand my knowledge of front-end and back-end technologies.
 ##Skills
 ####Technologies: 
-HTML, CSS, Bootstrap, JavaScript, React and Gatsby; Node, Express, AWS, SQL, MongoDB, Elasticsearch.
+HTML, CSS, Bootstrap, JavaScript, React and Gatsby, Vue, Angular; Node, Express, AWS, SQL, MongoDB, Elasticsearch.
 ####Tools: 
 Git, GitHub, APIs, Serverless, IntelliJ, CircleCi, Docker, Netlify, Heroku, Mocha, Chai.
 ####Communication: 
@@ -12,7 +12,8 @@ Proven presentational/interpersonal/written skills as a teacher.
 
 ##Work History
 ###Aspiring Software Developer in Training, Des Moines, IA| 2018-present
-* Obtaining AWS associate level certifications
+* Obtained AWS developer and solution architect associate level certifications
+* Building interactive application using React, Vue and Angular
 * Practice Test Driven Development using Mocha and Chai
 * Building APIs using express and deploying them via Heroku
 * Creation of full-stack projects using node, express and react, utilizing various databases such as PostgreSQL, MongoDB and Elasticsearch
